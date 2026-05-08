@@ -785,22 +785,47 @@ function initModal() {
 function initForm() {
   const form    = qs('#contact-form');
   const success = qs('#form-success');
+  const btn     = form.querySelector('.form-submit');
+  const btnText = btn.querySelector('span');
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const submitBtn = form.querySelector('.form-submit');
-    submitBtn.disabled = true;
-    submitBtn.querySelector('span').textContent = 'Sending...';
+    // Show loading state
+    btn.disabled = true;
+    btnText.textContent = 'Sending...';
 
-    // Simulate send (replace with real API call)
-    setTimeout(() => {
-      form.reset();
-      submitBtn.disabled = false;
-      submitBtn.querySelector('span').textContent = 'Send Message';
-      success.classList.add('show');
-      setTimeout(() => success.classList.remove('show'), 5000);
-    }, 1500);
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        // Success — show message, reset form
+        form.reset();
+        success.classList.add('show');
+        btnText.textContent = 'Message Sent ✓';
+        setTimeout(() => {
+          success.classList.remove('show');
+          btnText.textContent = 'Send Message';
+          btn.disabled = false;
+        }, 5000);
+      } else {
+        // Formspree returned an error
+        btnText.textContent = 'Failed — Try Again';
+        btn.disabled = false;
+        setTimeout(() => { btnText.textContent = 'Send Message'; }, 3000);
+      }
+    } catch (err) {
+      // Network error
+      btnText.textContent = 'No Connection';
+      btn.disabled = false;
+      setTimeout(() => { btnText.textContent = 'Send Message'; }, 3000);
+    }
   });
 }
 
