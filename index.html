@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bijit Kandel — UI/UX Designer & Frontend Developer crafting digital experiences that feel inevitable." />
+  <title>Bijit Kandel — UI/UX Designer & Frontend Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-counter"><span id="loader-num">0</span></div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-label">Loading experience</p>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">BK</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#case-study">Process</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◐</span></button>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#about" class="mm-link">About</a></li>
+      <li><a href="#work" class="mm-link">Work</a></li>
+      <li><a href="#case-study" class="mm-link">Process</a></li>
+      <li><a href="#services" class="mm-link">Services</a></li>
+      <li><a href="#contact" class="mm-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════ HERO ══════════════════════ -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for projects
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line">Bijit Kandel</span>
+      </h1>
+      <div class="hero-title-wrap">
+        <span class="hero-title-static">I design &amp; build</span>
+        <span class="hero-title-dynamic">
+          <span id="typewriter"></span><span class="cursor-blink">|</span>
+        </span>
+      </div>
+      <p class="hero-desc">
+        UI/UX Designer &amp; Frontend Developer crafting digital experiences<br />
+        that feel inevitable — pixel-perfect, deeply human, and alive.
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn-primary">
+          <span>View My Work</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Let's Talk</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="6">0</span><span>+</span><p>Projects</p></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="1">0</span><span>+</span><p>Years Exp.</p></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="98">0</span><span>%</span><p>Client Satisfaction</p></div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+    <div class="hero-pills">
+      <span class="pill">Figma</span>
+      <span class="pill">React</span>
+      <span class="pill">HTML/CSS</span>
+      <span class="pill">JavaScript</span>
+      <span class="pill">UI/UX</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ ABOUT ══════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-img-wrap">
+            <div class="about-img-placeholder">
+              <img src="photo.png" alt="Bijit Kandel" style="width:100%; height:100%; object-fit:cover; object-position:center top; border-radius:20px;" />
+            </div>
+            <div class="about-img-decoration"></div>
+          </div>
+          <div class="float-badge fb1"><span class="fb-icon">✦</span><span>Design Thinking</span></div>
+          <div class="float-badge fb2"><span class="fb-icon">⬡</span><span>Clean Code</span></div>
+        </div>
+
+        <div class="about-content">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">Turning ideas into<br /><em>experiences that matter</em></h2>
+          <p class="about-text">I'm a hybrid designer-developer who bridges the gap between aesthetics and engineering. With 3+ years of crafting interfaces for startups, agencies, and real-world clients, I bring a rare combination of design intuition and technical depth.</p>
+          <p class="about-text">My process is obsessively user-centered — every pixel earns its place, every interaction tells a story. From learning platforms to job apps to e-commerce — I've built products people actually use and love.</p>
+
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4>Design</h4>
+              <div class="skill-tags">
+                <span>Figma</span><span>Prototyping</span><span>Design Systems</span>
+                <span>UX Research</span><span>Wireframing</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Development</h4>
+              <div class="skill-tags">
+                <span>React</span><span>HTML</span><span>JavaScript</span>
+                <span>CSS</span><span>Tailwind</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-list">
+            <div class="progress-item">
+              <div class="progress-head"><span>UI/UX Design</span><span class="progress-val">95%</span></div>
+              <div class="progress-bar"><div class="progress-fill" data-width="95"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-head"><span>Frontend Dev</span><span class="progress-val">88%</span></div>
+              <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-head"><span>Motion Design</span><span class="progress-val">82%</span></div>
+              <div class="progress-bar"><div class="progress-fill" data-width="82"></div></div>
+            </div>
+          </div>
+
+          <a href="mycv.pdf" download="mycv.pdf" class="btn-primary about-cta">
+            <span>Download Resume</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ WORK / PROJECTS ══════════════════════ -->
+  <section id="work">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">Real projects,<br /><em>real impact</em></h2>
+        <p class="section-sub">From EdTech to E-Commerce — here's what I've built.</p>
+      </div>
+
+      <!-- ── Filter Tabs ── -->
+      <div class="work-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ui">UI Design</button>
+        <button class="filter-btn" data-filter="dev">Development</button>
+        <button class="filter-btn" data-filter="mobile">Mobile App</button>
+        <button class="filter-btn" data-filter="brand">Branding</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- ── Project 1: Bosscoder — Website (UI + Dev) spans 2 cols ── -->
+        <article class="project-card" data-category="ui" data-id="1">
+          <div class="project-img">
+            <!-- Replace with: <img src="project1.png" alt="Bosscoder" class="project-real-img" /> -->
+            <div class="project-mockup pm-1">
+              <div class="mockup-screen">
+                <div class="ms-bar"></div>
+                <div class="ms-hero-block" style="background:linear-gradient(135deg,rgba(124,110,255,0.4),rgba(56,189,248,0.2));"></div>
+                <div class="ms-content"><div class="ms-card"></div><div class="ms-card"></div><div class="ms-card"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>UI Design</span><span>Development</span><span>EdTech</span></div>
+            <h3>Bosscoder Academy</h3>
+            <p>A full-stack coding education platform where ambitious learners upskill in DSA, System Design and Development to crack top product-based companies like Google, Meta and Amazon.</p>
+            <div class="project-meta">
+              <span>2024</span>
+              <button class="project-open" data-id="1">
+                View Project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Project 2: Furniro — E-Commerce (UI + Dev) ── -->
+        <article class="project-card" data-category="ui" data-id="2">
+          <div class="project-img">
+            <!-- Replace with: <img src="project2.png" alt="Furniro" class="project-real-img" /> -->
+            <div class="project-mockup pm-2">
+              <div class="mockup-screen">
+                <div class="ms-bar"></div>
+                <div class="ms-graph" style="background:linear-gradient(135deg,rgba(244,197,90,0.15),rgba(244,197,90,0.04));"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>UI Design</span><span>E-Commerce</span><span>Figma</span></div>
+            <h3>Furniro — Furniture Store</h3>
+            <p>Premium e-commerce UI for a furniture brand. Clean product pages, smooth cart UX, and a checkout flow designed to maximise conversions.</p>
+            <div class="project-meta">
+              <span>2024</span>
+              <button class="project-open" data-id="2">
+                View Project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Project 3: Gyann App — Live Website (Dev) ── -->
+        <article class="project-card" data-category="ui" data-id="3">
+          <div class="project-img">
+            <!-- Live site preview via iframe fallback to screenshot -->
+            <div class="project-mockup pm-3 live-preview-thumb">
+              <div class="live-badge">
+                <span class="live-dot"></span> LIVE
+              </div>
+              <div class="mockup-screen">
+                <div class="ms-bar" style="background:linear-gradient(90deg,#7c6eff,#38bdf8);"></div>
+                <div class="ms-hero-block" style="background:linear-gradient(135deg,rgba(56,189,248,0.3),rgba(124,110,255,0.15));"></div>
+                <div class="ms-row"><div></div><div></div><div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>Development</span><span>EdTech</span><span>Live</span></div>
+            <h3>Gyann App</h3>
+            <p>A live EdTech platform where students learn subjects through structured video lessons and MCQ-based exams. Built to scale with a clean, intuitive interface.</p>
+            <div class="project-meta">
+              <span>2024</span>
+              <button class="project-open" data-id="3">
+                View Project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Project 4: Hirynn — Mobile App (UI + Mobile) ── -->
+        <article class="project-card" data-category="mobile" data-id="4">
+          <div class="project-img">
+            <!-- Replace with: <img src="project4.png" alt="Hirynn" class="project-real-img" /> -->
+            <div class="project-mockup pm-4">
+              <div class="mockup-phone">
+                <div class="mp-screen">
+                  <div class="mp-header" style="background:linear-gradient(90deg,#7c6eff,#e879f9);"></div>
+                  <div class="mp-list"><div></div><div></div><div></div><div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>Mobile App</span><span>UI/UX</span><span>Job Platform</span></div>
+            <h3>Hirynn — Teacher Job App</h3>
+            <p>A mobile-first job marketplace connecting teachers with schools. Teachers browse opportunities and apply; schools post jobs and manage applications — all in one seamless experience.</p>
+            <div class="project-meta">
+              <span>2024</span>
+              <button class="project-open" data-id="4">
+                View Project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Project 5: Brand Logo Creation (Brand) ── -->
+        <article class="project-card" data-category="brand" data-id="5">
+          <div class="project-img">
+            <!-- Replace with: <img src="project5.png" alt="Brand" class="project-real-img" /> -->
+            <div class="project-mockup pm-5">
+              <div class="mockup-logo">
+                <svg viewBox="0 0 120 80" fill="none">
+                  <circle cx="40" cy="40" r="28" stroke="var(--accent)" stroke-width="2" opacity="0.6"/>
+                  <circle cx="80" cy="40" r="28" stroke="var(--accent2)" stroke-width="2" opacity="0.6"/>
+                  <ellipse cx="60" cy="40" rx="12" ry="20" fill="url(#brandGrad)" opacity="0.8"/>
+                  <defs>
+                    <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="var(--accent)"/>
+                      <stop offset="100%" stop-color="var(--accent2)"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>Branding</span><span>Logo Design</span><span>Figma</span></div>
+            <h3>Brand Identity Creation</h3>
+            <p>Logo design and visual identity systems for multiple clients. Each brand crafted with intention — from colour psychology to typography that speaks before a word is read.</p>
+            <div class="project-meta">
+              <span>2024–2025</span>
+              <button class="project-open" data-id="5">
+                View Project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Project 6: Portfolio Website — full width (Dev + UI) ── -->
+        <article class="project-card project-full" data-category="ui" data-id="6">
+          <div class="project-img">
+            <!-- Replace with: <img src="project6.png" alt="Portfolio" class="project-real-img" /> -->
+            <div class="project-mockup pm-6">
+              <div class="mockup-screen">
+                <div class="ms-bar" style="background:linear-gradient(90deg,var(--accent),var(--accent2));"></div>
+                <div class="ms-hero-block" style="background:linear-gradient(135deg,rgba(124,110,255,0.25),rgba(232,121,249,0.15));height:60px;"></div>
+                <div class="ms-row"><div></div><div></div><div></div><div></div></div>
+                <div class="ms-content" style="margin-top:8px;"><div class="ms-card"></div><div class="ms-card"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>UI Design</span><span>Development</span><span>GSAP</span><span>Portfolio</span></div>
+            <h3>Personal Portfolio — Design to Code</h3>
+            <p>This portfolio itself — designed in Figma and brought to life with HTML, CSS, GSAP animations, and vanilla JavaScript. A showcase of what's possible when design and development are treated as one discipline, not two.</p>
+            <div class="project-meta">
+              <span>2024</span>
+              <button class="project-open" data-id="6">
+                View Project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════ CASE STUDY / PROCESS ══════════════════════ -->
+  <section id="case-study">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">My Process</div>
+        <h2 class="section-title">How I work —<br /><em>the full story</em></h2>
+      </div>
+      <div class="process-timeline">
+        <div class="process-line"></div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <div class="step-icon"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/><path d="M12 20a8 8 0 0116 0" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="28" r="3" fill="var(--accent)"/></svg></div>
+            <div class="step-num">01</div>
+            <h3>Discover & Research</h3>
+            <p>I begin every project by deeply understanding the problem space. User interviews, competitive analysis, heuristic evaluations — building a foundation of insight before a single wireframe is sketched.</p>
+            <div class="step-tags"><span>User Research</span><span>Competitive Analysis</span><span>Stakeholder Interviews</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <div class="step-icon"><svg viewBox="0 0 40 40" fill="none"><rect x="5" y="8" width="30" height="24" rx="3" stroke="var(--accent)" stroke-width="1.5"/><path d="M12 16h16M12 20h10M12 24h13" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="step-num">02</div>
+            <h3>Define & Synthesize</h3>
+            <p>Translating raw research into clear problem statements. Creating personas, journey maps, and information architecture that sets a clear north star for the entire design process.</p>
+            <div class="step-tags"><span>Personas</span><span>Journey Mapping</span><span>IA</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <div class="step-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M8 32L18 22l6 6 8-16" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="5" y="5" width="12" height="12" rx="2" stroke="var(--accent)" stroke-width="1.5"/><rect x="23" y="5" width="12" height="12" rx="2" stroke="var(--accent)" stroke-width="1.5"/></svg></div>
+            <div class="step-num">03</div>
+            <h3>Design & Prototype</h3>
+            <p>Rapid ideation to hi-fidelity prototypes. I work in Figma with component systems that scale, creating interactive prototypes that feel like the real product — because testing fidelity matters.</p>
+            <div class="step-tags"><span>Wireframes</span><span>Hi-fi Design</span><span>Figma Prototypes</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <div class="step-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M20 6v28M6 20h28" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="14" stroke="var(--accent)" stroke-width="1.5"/></svg></div>
+            <div class="step-num">04</div>
+            <h3>Test & Iterate</h3>
+            <p>Usability testing with real users, A/B testing, and data-driven iteration. Every decision is validated, not assumed. The best design is the one users never have to think about.</p>
+            <div class="step-tags"><span>Usability Testing</span><span>A/B Testing</span><span>Analytics</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <div class="step-icon"><svg viewBox="0 0 40 40" fill="none"><polyline points="6,24 14,16 20,22 28,12 34,16" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 34h28" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="step-num">05</div>
+            <h3>Build & Launch</h3>
+            <p>I bridge the design-dev gap by building it myself when needed — pixel-perfect, performant, and accessible. Smooth handoff documentation when working with engineering teams.</p>
+            <div class="step-tags"><span>React / Next.js</span><span>Dev Handoff</span><span>Launch</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SERVICES ══════════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Services</div>
+        <h2 class="section-title">What I bring<br /><em>to the table</em></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="4" stroke="currentColor" stroke-width="2"/><path d="M16 20h16M16 26h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="36" cy="36" r="8" fill="var(--accent)" opacity="0.2" stroke="var(--accent)" stroke-width="1.5"/></svg>
+          </div>
+          <h3>UX Design</h3>
+          <p>I dig deep into user behaviour before touching any design tool. Every flow, every screen is backed by research — so the final product actually solves real problems.</p>
+          <ul class="service-list">
+            <li>User Research & Interviews</li>
+            <li>Wireframing & User Flows</li>
+            <li>Usability Testing</li>
+            <li>Information Architecture</li>
+            <li>UX Audits & Heuristic Reviews</li>
+          </ul>
+          <div class="service-footer">Starting at <strong>Rs. 15,000</strong></div>
+        </div>
+        <div class="service-card service-featured">
+          <div class="service-badge">Most Popular</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 40L24 8l16 32H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 30h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>UI Design</h3>
+          <p>Pixel-perfect interfaces that look premium and feel intuitive. I design systems that scale — from a single screen to an entire product suite — with consistency built in from day one.</p>
+          <ul class="service-list">
+            <li>High-Fidelity UI Design</li>
+            <li>Design Systems & Component Libraries</li>
+            <li>Mobile & Web App Interfaces</li>
+            <li>Interactive Prototypes in Figma</li>
+            <li>Brand-aligned Visual Design</li>
+          </ul>
+          <div class="service-footer">Starting at <strong>Rs.10,000</strong></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><polyline points="12,16 6,24 12,32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="36,16 42,24 36,32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 10l8 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Frontend Development</h3>
+          <p>I don't just hand off designs — I build them. Clean, fast, accessible code that brings the design to life exactly as intended, with animations that make people stop and say "wow."</p>
+          <ul class="service-list">
+            <li>React / Next.js Development</li>
+            <li>GSAP & Framer Motion Animations</li>
+            <li>Responsive & Mobile-first Builds</li>
+            <li>Performance Optimization (90+ Lighthouse)</li>
+            <li>Design-to-Code Handoff</li>
+          </ul>
+          <div class="service-footer">Starting at <strong>Rs.25,000</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ TESTIMONIALS ══════════════════════ -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-title">What clients<br /><em>actually say</em></h2>
+      </div>
+      <div class="testimonials-track-wrap">
+        <div class="testimonials-track">
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <p>"Working with Bijit completely changed how I think about our product. Conversions up 60% after the redesign."</p>
+            <div class="tc-author"><div class="tc-avatar">SK</div><div><strong>Sarah Kim</strong><span>Head of Product, Fintech Startup</span></div></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <p>"Rare to find someone who can think in both design and code. The animations on our site have been mentioned in every client call since launch."</p>
+            <div class="tc-author"><div class="tc-avatar">MR</div><div><strong>Marcus Reed</strong><span>CEO, Creative Agency</span></div></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <p>"Delivered a complete design system in 3 weeks. Incredibly thoughtful work that considered edge cases we hadn't even thought of."</p>
+            <div class="tc-author"><div class="tc-avatar">AL</div><div><strong>Amara Levi</strong><span>CTO, SaaS Company</span></div></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <p>"The UX research phase alone was worth the entire project fee. Transformed how we build products."</p>
+            <div class="tc-author"><div class="tc-avatar">JP</div><div><strong>James Park</strong><span>Founder, EdTech Startup</span></div></div>
+          </div>
+          <!-- Duplicates for infinite loop -->
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <p>"Working with Bijit completely changed how I think about our product. Conversions up 60% after the redesign."</p>
+            <div class="tc-author"><div class="tc-avatar">SK</div><div><strong>Sarah Kim</strong><span>Head of Product, Fintech Startup</span></div></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <p>"Rare to find someone who can think in both design and code. The animations on our site have been mentioned in every client call since launch."</p>
+            <div class="tc-author"><div class="tc-avatar">MR</div><div><strong>Marcus Reed</strong><span>CEO, Creative Agency</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ CONTACT ══════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Let's build<br /><em>something great</em></h2>
+          <p class="contact-sub">I'm currently open for freelance projects and full-time opportunities. If you have a project in mind or just want to talk design, I'm all ears.</p>
+          <div class="contact-details">
+            <a href="mailto:Bijitkandel10@gmail.com" class="contact-item">
+              <div class="ci-icon">✉</div>
+              <div><span>Email</span><strong>Bijitkandel10@gmail.com</strong></div>
+            </a>
+            <a href="tel:+9779855016233" class="contact-item">
+              <div class="ci-icon">✆</div>
+              <div><span>Phone</span><strong>+977-9855016233</strong></div>
+            </a>
+            <div class="contact-item">
+              <div class="ci-icon">◉</div>
+              <div><span>Location</span><strong>Nepal · Available Worldwide (Remote)</strong></div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Dribbble">Dr</a>
+            <a href="#" class="social-link" aria-label="GitHub">GH</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">✕</a>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Full Name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Example@gmail.com" required />
+            </div>
+            <div class="form-group">
+              <label for="project">Project Type</label>
+              <select id="project" name="project">
+                <option value="">Select a service...</option>
+                <option>UX Design</option>
+                <option>UI Design</option>
+                <option>Frontend Development</option>
+                <option>Full Project (Design + Dev)</option>
+                <option>Mobile App Design</option>
+                <option>Brand Identity</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Me About Your Project</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your project, goals, timeline..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <div class="form-success" id="form-success">
+              <span>✓</span> Message sent! I'll be in touch within 24 hours.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-bracket">[</span><span class="logo-text">BK</span><span class="logo-bracket">]</span>
+          </div>
+          <p>Crafting digital experiences that feel inevitable.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-copy">
+          <span>© 2026 Bijit Kandel. All rights reserved.</span>
+          <span>Designed & Built with ♥</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <!-- Dynamically populated by JS -->
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
